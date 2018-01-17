@@ -1,9 +1,9 @@
 FROM jmesserli/openjdk-with-docker
 
-ENV OCTOPUS_VERSION 4.29.0
+ENV OCTOPUS_VERSION 4.30.0
 
 # Install CoreCLR dependencies for Octopus CLI
-RUN apt-get update && apt-get -y install libunwind8 libkrb5-3 liblttng-ust0 zlib1g libuuid1 && \
+RUN apt-get update && apt-get -y install libunwind8 && \
         apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN mkdir /opt/octo && cd /opt/octo && \
